@@ -24,13 +24,13 @@ class Api {
 
             return response;
         } catch(err) {
-            console.log('Error al hacer la solicitud');
+            console.log('Error al hacer la solicitud', err);
         }
     }
 
     async Put(id, data) {
         try {
-            this.url = this.baseUrl + `?id=${id}`;
+            this.url = this.baseUrl + `/${id}`;
             const response = await axios.put(this.url, data);
 
             return response;
@@ -39,10 +39,13 @@ class Api {
         }
     }
 
-    async Delete(id) {
+    async Delete(id, author) {
         try {
-            this.url = this.baseUrl + `?id=${id}`;
-            const response = await axios.delete(this.url);
+            this.url = this.baseUrl + `/${id}`;
+            const data = {
+                author,
+            }
+            const response = await axios.delete(this.url, { data });
 
             return response;
         } catch(err) {
