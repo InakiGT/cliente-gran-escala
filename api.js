@@ -8,7 +8,7 @@ class Api {
 
     async Get(id) {
         try {
-            this.url = id ? this.baseUrl + `?id=${id}` : this.baseUrl;
+            this.url = id ? this.baseUrl + `/${id}` : this.baseUrl;
             const response = await axios.get(this.url);
 
             return response;

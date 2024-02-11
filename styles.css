@@ -6,3 +6,7 @@ body {
 section {
     display: none;
 }
+
+.avatar {
+    width: 100px;
+}
