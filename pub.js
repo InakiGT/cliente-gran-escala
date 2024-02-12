@@ -2,7 +2,9 @@
 const mostrarContainer = document.getElementById('mostrar');
 
 const cuaApi = new Api('http://localhost:3000/api/v1/cua');
-const id = location.href.split('')[location.href.length - 1];
+const url = location.href;
+const idStartIndex = url.lastIndexOf('=');
+const id = url.slice(idStartIndex + 1);
 
 const getData = async () => {
     const data = await cuaApi.Get(id);

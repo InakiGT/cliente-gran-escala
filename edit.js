@@ -3,12 +3,13 @@ const titleInput = document.getElementById('form-title');
 const contentInput = document.getElementById('form-content');
 const imgInput = document.getElementById('form-img');
 
-const id = location.href.split('')[location.href.length - 1];
+const url = location.href;
+const idStartIndex = url.lastIndexOf('=');
+const id = url.slice(idStartIndex + 1);
 const cuaApi = new Api('http://localhost:3000/api/v1/cua');
 
 const getInfo = async () => {
     const data = await cuaApi.Get(id);
-
     titleInput.value = data.data.title;
     contentInput.value = data.data.content;
     imgInput.value = data.data.imgurl;
