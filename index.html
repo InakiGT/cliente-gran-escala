@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini-X</title>
 
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
     <nav>
@@ -16,32 +19,38 @@
         </ul>
     </nav>
 
-    <section id="mostrar">
-    </section>
-    <section id="mis">
-    </section>
+    <div class="content">
+        <section id="mostrar">
+        </section>
+        <section id="mis">
+        </section>
 
-    <section id="publicar">
-        <form id="create-cua">
-            <div>
-                <label for="">Título</label>
-                <input id="form-title" type="text" >
-            </div>
-            <div>
-                <label for="">Contenido</label>
-                <textarea id="form-content"></textarea>
-            </div>
-            <div>
-                <label for="">URL de la imagen</label>
-                <input id="form-img" type="url" >
-            </div>
+        <section id="publicar">
+            <form id="create-cua">
+                <h1 class="logo">Crear un <span>Cua</span></h1>
+                <div>
+                    <label for="">Título</label>
+                    <br />
+                    <input id="form-title" type="text" >
+                </div>
+                <div>
+                    <label for="">Contenido</label>
+                    <br />
+                    <textarea id="form-content"></textarea>
+                </div>
+                <div>
+                    <label for="">URL de la imagen</label>
+                    <br />
+                    <input id="form-img" type="url" >
+                </div>
 
-            <button type="submit">Listo!</button>
-        </form>
-    </section>
+                <button type="submit">Listo!</button>
+            </form>
+        </section>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./api.js"></script>
-    <script src="./jwt.js"></script>
-    <script src="./index.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/jwt.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>

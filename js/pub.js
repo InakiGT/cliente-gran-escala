@@ -6,6 +6,12 @@ const url = location.href;
 const idStartIndex = url.lastIndexOf('=');
 const id = url.slice(idStartIndex + 1);
 
+const token = localStorage.getItem('token');
+
+if (token === null) {
+    window.location = '../login.html';
+}
+
 const getData = async () => {
     const data = await cuaApi.Get(id);
     const element = data.data;
@@ -15,6 +21,7 @@ const getData = async () => {
     const title = document.createElement('p');
     const content = document.createElement('p');
     const img = document.createElement('img');
+    const divButtons = document.createElement('div');
     let editButton = null;
     let deleteButton = null;
 
@@ -23,7 +30,10 @@ const getData = async () => {
     img.src = element.imgurl ? element.imgurl : '';
 
     title.appendChild(titleData);
+    title.classList = 'title';
     content.appendChild(contentData);
+    div.className = 'card';
+    divButtons.className = 'buttons';
     
     div.appendChild(title);
     div.appendChild(content);
@@ -51,8 +61,11 @@ const getData = async () => {
             }
         });
 
-        div.appendChild(editButton);
-        div.appendChild(deleteButton);
+        divButtons.appendChild(editButton);
+        divButtons.appendChild(deleteButton);
+
+        div.appendChild(divButtons);
+        misContainer.appendChild(div);
     }
 }
 

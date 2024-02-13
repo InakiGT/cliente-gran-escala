@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini-X</title>
 
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
     <nav>
@@ -13,25 +16,28 @@
             <li><a href="./index.html" id="publicar-nav">Volver</a></li>
         </ul>
     </nav>
-    <form id="edit-form">
-        <div>
-            <label for="">Título</label>
-            <input id="form-title" type="text" >
-        </div>
-        <div>
-            <label for="">Contenido</label>
-            <textarea id="form-content"></textarea>
-        </div>
-        <div>
-            <label for="">URL de la imagen</label>
-            <input id="form-img" type="url" >
-        </div>
+    <div class="content">
+        <form id="edit-form">
+            <h1 class="logo">Edita tu <span>Cua</span></h1>
+            <div>
+                <label for="">Título</label>
+                <input id="form-title" type="text" >
+            </div>
+            <div>
+                <label for="">Contenido</label>
+                <textarea id="form-content"></textarea>
+            </div>
+            <div>
+                <label for="">URL de la imagen</label>
+                <input id="form-img" type="url" >
+            </div>
 
-        <button type="submit">Editar</button>
-    </form>
+            <button type="submit">Editar</button>
+        </form>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./api.js"></script>
-    <script src="./jwt.js"></script>
-    <script src="./edit.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/jwt.js"></script>
+    <script src="./js/edit.js"></script>
 </body>
 </html>

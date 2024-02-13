@@ -1,0 +1,155 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+section {
+    display: none;
+}
+
+
+form {
+    width: 50%;
+    height: 30%;
+    padding: 100px 10px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #E1E1E1;
+    -webkit-box-shadow: -1px 6px 15px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 6px 15px -6px rgba(0,0,0,0.75);
+    box-shadow: -1px 6px 15px -6px rgba(0,0,0,0.75);
+}
+
+a {
+    font-style: none;
+    color: #352e2e;
+    margin-bottom: 20px;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+input {
+    border: 1px solid #E1E1E1;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    font-weight: 100;
+    font-size: 19px;
+}
+
+textarea {
+    min-width: 300px;
+    border: 1px solid #E1E1E1;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+button {
+    min-width: 120px;
+    max-width: 200px;
+    padding: 10px 8px;
+    border: none;
+    background-color: #352e2e;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease-in;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #544545;
+}
+
+nav {
+    left: 0;
+    top: 0;
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFF;
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.41);
+    -moz-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.41);
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.41);
+}
+
+ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.avatar {
+    width: 100px;
+    border: 5px solid transparent;
+    border-radius: 100px;
+    transition: border-color .5s ease-in-out;
+}
+
+.avatar:hover {
+    border-color: #513e3e;
+}
+
+.logo {
+   font-weight: 700; 
+   font-size: 40px
+}
+
+.logo span {
+    font-weight: 100;
+}
+
+.signin {
+    height: 60%;
+}
+
+.content {
+    margin-top: 100px;
+}
+
+.card {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    padding: 50px 100px;
+    margin-bottom: 30px;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.38);
+    -moz-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.38);
+    box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.38);
+}
+
+.card img {
+    width: 30%;
+    margin: 10px auto;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    justify-content: space-around;
+}

@@ -7,6 +7,12 @@ const publicarNav = document.getElementById('publicar-nav');
 const mostrarNav = document.getElementById('mostrar-nav');
 const misNav = document.getElementById('mis-nav');
 
+const token = localStorage.getItem('token');
+
+if (token === null) {
+    window.location = '../login.html';
+}
+
 const cuaApi = new Api('http://localhost:3000/api/v1/cua');
 
 mostrarContainer.style = 'display: block';
@@ -82,6 +88,7 @@ setInterval(async () => {
         const content = document.createElement('p');
         const img = document.createElement('img');
         const zoomButton = document.createElement('button');
+        const divButtons = document.createElement('div');
         let editButton = null;
         let deleteButton = null;
     
@@ -90,14 +97,17 @@ setInterval(async () => {
         img.src = element.imgurl ? element.imgurl : '';
 
         title.appendChild(titleData);
+        title.classList = 'title';
         content.appendChild(contentData);
         zoomButton.textContent = 'Agrandar';
+        div.className = 'card';
+        divButtons.className = 'buttons';
         
         div.appendChild(title);
         div.appendChild(content);
         div.appendChild(img);
         mostrarContainer.appendChild(div);
-        div.appendChild(zoomButton);
+        divButtons.appendChild(zoomButton);
 
         zoomButton.addEventListener('click', () => {
             window.location = `./vpubdetalle.html?id=${element.id}`;
@@ -124,9 +134,11 @@ setInterval(async () => {
                 }
             });
 
-            div.appendChild(editButton);
-            div.appendChild(deleteButton);
+            divButtons.appendChild(editButton);
+            divButtons.appendChild(deleteButton);
         }
+
+        div.appendChild(divButtons);
     });
 
 }, 3000);
@@ -146,6 +158,7 @@ const getMine = async () => {
             const content = document.createElement('p');
             const img = document.createElement('img');
             const zoomButton = document.createElement('button');
+            const divButtons = document.createElement('div');
             let editButton = null;
             let deleteButton = null;
         
@@ -154,14 +167,17 @@ const getMine = async () => {
             img.src = element.imgurl ? element.imgurl : '';
 
             title.appendChild(titleData);
+            title.classList = 'title';
             content.appendChild(contentData);
             zoomButton.textContent = 'Agrandar';
+            div.className = 'card';
+            divButtons.className = 'buttons';
             
             div.appendChild(title);
             div.appendChild(content);
             div.appendChild(img);
-            misContainer.appendChild(div);
-            div.appendChild(zoomButton);
+            mostrarContainer.appendChild(div);
+            divButtons.appendChild(zoomButton);
 
             zoomButton.addEventListener('click', () => {
                 window.location = `./vpubdetalle.html?id=${element.id}`;
@@ -186,9 +202,11 @@ const getMine = async () => {
                     console.log('ERROR EN LA ELIMINACIÓN');
                 }
             });
+            divButtons.appendChild(editButton);
+            divButtons.appendChild(deleteButton);
 
-            div.appendChild(editButton);
-            div.appendChild(deleteButton);
+            div.appendChild(divButtons);
+            misContainer.appendChild(div);
         }
     });
 }

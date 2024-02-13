@@ -8,6 +8,12 @@ const idStartIndex = url.lastIndexOf('=');
 const id = url.slice(idStartIndex + 1);
 const cuaApi = new Api('http://localhost:3000/api/v1/cua');
 
+const token = localStorage.getItem('token');
+
+if (token === null) {
+    window.location = '../login.html';
+}
+
 const getInfo = async () => {
     const data = await cuaApi.Get(id);
     titleInput.value = data.data.title;
